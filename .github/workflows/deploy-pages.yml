@@ -38,6 +38,7 @@ jobs:
         env:
           GITHUB_PAGES: "true"
           NEXT_PUBLIC_BASE_PATH: /ammar-kabeel-portfolio
+          NEXT_PUBLIC_SITE_URL: https://seosstm-hash.github.io/ammar-kabeel-portfolio/
           NEXT_TELEMETRY_DISABLED: "1"
 
       - name: Upload GitHub Pages artifact
