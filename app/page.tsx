@@ -6,6 +6,8 @@ import Image from "next/image";
 type Language = "ar" | "en";
 type WorkCategory = "all" | "seo" | "social" | "copy";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 type WorkItem = {
   title: Record<Language, string>;
   client: string;
@@ -268,7 +270,7 @@ const workItems: WorkItem[] = [
     title: { ar: "لوحات نتائج SEO", en: "SEO performance dashboards" },
     client: "Google Search Console",
     category: "seo",
-    image: "/portfolio/seo-results-search-49.jpg",
+    image: `${BASE_PATH}/portfolio/seo-results-search-49.jpg`,
     description: {
       ar: "نماذج موثقة من متابعة النقرات والظهور والحركة العضوية عبر Google Search Console.",
       en: "Documented examples of clicks, impressions, and organic visibility tracked in Google Search Console.",
@@ -278,7 +280,7 @@ const workItems: WorkItem[] = [
     title: { ar: "تحسين متجر سعودي", en: "Saudi e-commerce SEO" },
     client: "Sallat",
     category: "seo",
-    image: "/portfolio/seo-results-salla-52.jpg",
+    image: `${BASE_PATH}/portfolio/seo-results-salla-52.jpg`,
     description: {
       ar: "مقارنة الأداء قبل وبعد العمل على الظهور العضوي وبنية المتجر.",
       en: "A before-and-after view of organic visibility and store optimization work.",
@@ -288,7 +290,7 @@ const workItems: WorkItem[] = [
     title: { ar: "نماذج نمو عضوي", en: "Organic growth examples" },
     client: "Multiple Projects",
     category: "seo",
-    image: "/portfolio/seo-results-more-53.jpg",
+    image: `${BASE_PATH}/portfolio/seo-results-more-53.jpg`,
     description: {
       ar: "أمثلة إضافية لقياس تطور النقرات ومرات الظهور والترتيب.",
       en: "Additional examples tracking click, impression, and ranking progress.",
@@ -298,7 +300,7 @@ const workItems: WorkItem[] = [
     title: { ar: "محتوى عطور متوافق مع البحث", en: "Search-led perfume content" },
     client: "Crearoma",
     category: "seo",
-    image: "/portfolio/seo-perfume-31.jpg",
+    image: `${BASE_PATH}/portfolio/seo-perfume-31.jpg`,
     description: {
       ar: "كتابة محتوى عميق، واستهداف كلمات عالية الطلب، وصياغة عناوين تساعد على النقر.",
       en: "Deep content, high-demand keyword targeting, and click-focused title writing.",
@@ -308,7 +310,7 @@ const workItems: WorkItem[] = [
     title: { ar: "محتوى القهوة المختصة", en: "Specialty coffee content" },
     client: "Ajaweed",
     category: "seo",
-    image: "/portfolio/seo-coffee-35.jpg",
+    image: `${BASE_PATH}/portfolio/seo-coffee-35.jpg`,
     description: {
       ar: "بناء مقالات متوافقة مع نية المستخدم وربطها بفرص الظهور في نتائج البحث.",
       en: "Articles structured around user intent and organic search opportunities.",
@@ -318,7 +320,7 @@ const workItems: WorkItem[] = [
     title: { ar: "محتوى متجر أسماك الزينة", en: "Ornamental fish store content" },
     client: "E-commerce",
     category: "seo",
-    image: "/portfolio/seo-fish-39.jpg",
+    image: `${BASE_PATH}/portfolio/seo-fish-39.jpg`,
     description: {
       ar: "دمج المقالات المتخصصة مع العناصر البصرية لدعم الفهم والظهور.",
       en: "Combining specialist articles with visual elements to support understanding and visibility.",
@@ -328,7 +330,7 @@ const workItems: WorkItem[] = [
     title: { ar: "مقالات القطاع الطبي", en: "Healthcare articles" },
     client: "Vera Clinics",
     category: "seo",
-    image: "/portfolio/seo-medical-42.jpg",
+    image: `${BASE_PATH}/portfolio/seo-medical-42.jpg`,
     description: {
       ar: "محتوى طبي منظم بلغة واضحة ومهيأ لمحركات البحث.",
       en: "Structured healthcare content written clearly and optimized for search.",
@@ -338,7 +340,7 @@ const workItems: WorkItem[] = [
     title: { ar: "حملة برياني الذواقة", en: "Biryani Atwaqa campaign" },
     client: "Food & Beverage",
     category: "social",
-    image: "/portfolio/social-biryani-05.jpg",
+    image: `${BASE_PATH}/portfolio/social-biryani-05.jpg`,
     description: {
       ar: "محتوى تسويقي وأفكار حملات لمطعم هندي في الدمام بهدف رفع التفاعل والمبيعات.",
       en: "Marketing content and campaign ideas for an Indian restaurant in Dammam.",
@@ -348,7 +350,7 @@ const workItems: WorkItem[] = [
     title: { ar: "إطلاق ناي كافيه", en: "Nay Cafe launch" },
     client: "Nay Cafe",
     category: "social",
-    image: "/portfolio/social-nay-09.jpg",
+    image: `${BASE_PATH}/portfolio/social-nay-09.jpg`,
     description: {
       ar: "حملة إطلاق ركزت على الوعي بالتفاصيل البصرية والهوية وتجربة المكان.",
       en: "A launch campaign built around awareness, visual detail, identity, and experience.",
@@ -358,7 +360,7 @@ const workItems: WorkItem[] = [
     title: { ar: "حملة مطعم كيين", en: "KIIN restaurant campaign" },
     client: "KIIN",
     category: "social",
-    image: "/portfolio/social-kiin-13.jpg",
+    image: `${BASE_PATH}/portfolio/social-kiin-13.jpg`,
     description: {
       ar: "أفكار إعلانية ومحتوى وتصوير وتعاون مع المؤثرين لدعم الوصول والمبيعات.",
       en: "Creative ideas, content, production, and influencer collaboration supporting reach and sales.",
@@ -368,7 +370,7 @@ const workItems: WorkItem[] = [
     title: { ar: "حملة تالا هاوس", en: "Tala House campaign" },
     client: "Real Estate",
     category: "social",
-    image: "/portfolio/social-tala-15.jpg",
+    image: `${BASE_PATH}/portfolio/social-tala-15.jpg`,
     description: {
       ar: "حملة عقارية موجهة لبناء الوعي وتحويل الاهتمام إلى استفسارات وفرص حقيقية.",
       en: "A real-estate campaign designed to turn awareness into inquiries and opportunities.",
@@ -378,7 +380,7 @@ const workItems: WorkItem[] = [
     title: { ar: "محتوى ناوي ميديا", en: "Nawy Media content" },
     client: "Nawy Media",
     category: "social",
-    image: "/portfolio/social-nawy-21.jpg",
+    image: `${BASE_PATH}/portfolio/social-nawy-21.jpg`,
     description: {
       ar: "محتوى حملة توعوية بالتعاون مع التوجيه الفني لإبراز خدمات الوكالة.",
       en: "Awareness content created with art direction to spotlight the agency’s services.",
@@ -388,7 +390,7 @@ const workItems: WorkItem[] = [
     title: { ar: "حملة توعوية صحية", en: "Healthcare awareness campaign" },
     client: "Jamjoom Pharma",
     category: "copy",
-    image: "/portfolio/copy-pharma-25.jpg",
+    image: `${BASE_PATH}/portfolio/copy-pharma-25.jpg`,
     description: {
       ar: "كتابة منشورات مخصصة لكل منصة لتبسيط المعلومات الطبية وبناء تواصل إنساني.",
       en: "Platform-specific copy that simplified health information and built an empathetic connection.",
@@ -531,7 +533,7 @@ export default function Home() {
           <div className="hero-shape hero-shape-blue" />
           <div className="hero-photo-frame">
             <Image
-              src="/portfolio/ammar-kabeel.jpg"
+              src={`${BASE_PATH}/portfolio/ammar-kabeel.jpg`}
               alt={isArabic ? "عمار قابيل، أخصائي تسويق إلكتروني" : "Ammar Kabeel, Digital Marketing Specialist"}
               fill
               sizes="(max-width: 900px) 90vw, 42vw"
@@ -760,7 +762,7 @@ export default function Home() {
             <strong>Ammar Kabeel</strong>
             <i aria-hidden="true">↗</i>
           </a>
-          <a href="/portfolio/ammar-kabeel-cv.pdf" download>
+          <a href={`${BASE_PATH}/portfolio/ammar-kabeel-cv.pdf`} download>
             <span>{t.download}</span>
             <strong>PDF — CV</strong>
             <i aria-hidden="true">↓</i>
