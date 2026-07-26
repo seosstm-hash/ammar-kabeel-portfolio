@@ -3,6 +3,9 @@ import { Geist, Geist_Mono, Noto_Kufi_Arabic } from "next/font/google";
 import "./globals.css";
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://ammar-kabeel-portfolio.cactuss-1551.chatgpt.site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +24,7 @@ const notoKufiArabic = Noto_Kufi_Arabic({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "عمار قابيل | أخصائي تسويق إلكتروني",
     template: "%s | Ammar Kabeel",
@@ -53,9 +57,9 @@ export const metadata: Metadata = {
       },
     ],
   },
-  other: {
-    "codex-preview": "development",
-  },
+  other: process.env.NEXT_PUBLIC_SITE_URL
+    ? undefined
+    : { "codex-preview": "development" },
   icons: {
     icon: `${BASE_PATH}/favicon.svg`,
     shortcut: `${BASE_PATH}/favicon.svg`,
