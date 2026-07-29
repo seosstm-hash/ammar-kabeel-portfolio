@@ -40,6 +40,11 @@ const clients: readonly ClientItem[] = [
   { name: "Perfume Legend", logo: "/clients/perfume-legend.jpg", dark: true },
   { name: "Asrar", logo: "/clients/asrar.png", dark: true },
   { name: "Cactus", logo: "/clients/cactus.png" },
+  { name: "مدارس البتول والفرقان الدولية", logo: "/clients/batool-forqan.png" },
+  { name: "Roxa", logo: "/clients/roxa.png", dark: true },
+  { name: "مطعم مجلس عسير", logo: "/clients/majlis-aseer.png" },
+  { name: "Coda", logo: "/clients/coda.png" },
+  { name: "Feel", logo: "/clients/feel.png" },
 ] as const;
 
 const content = {

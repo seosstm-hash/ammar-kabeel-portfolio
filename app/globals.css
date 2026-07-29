@@ -940,7 +940,7 @@ img {
   direction: ltr;
   transform: translate3d(0, 0, 0);
   will-change: transform;
-  animation: clientsMarquee 42s linear infinite;
+  animation: clientsMarquee 54s linear infinite;
 }
 
 
