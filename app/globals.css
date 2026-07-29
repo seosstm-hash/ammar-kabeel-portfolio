@@ -924,6 +924,7 @@ img {
   max-width: 1500px;
   margin: 58px auto 0;
   overflow: hidden;
+  direction: ltr;
   mask-image: linear-gradient(
     90deg,
     transparent,
@@ -937,15 +938,16 @@ img {
   width: max-content;
   display: flex;
   direction: ltr;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
   animation: clientsMarquee 42s linear infinite;
 }
 
-.clients-viewport:hover .clients-track {
-  animation-play-state: paused;
-}
 
 .clients-row {
   display: flex;
+  flex: 0 0 auto;
+  width: max-content;
   gap: 18px;
   padding-inline-end: 18px;
 }
@@ -1380,8 +1382,11 @@ footer p {
 }
 
 @keyframes clientsMarquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
