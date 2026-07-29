@@ -728,7 +728,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="clients-viewport">
+        <div className="clients-viewport" dir="ltr">
           <div className="clients-track">
             {[0, 1].map((group) => (
               <div
