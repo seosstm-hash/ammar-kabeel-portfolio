@@ -22,8 +22,6 @@ type ClientItem = {
   dark?: boolean;
 };
 
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
 const clients: readonly ClientItem[] = [
   { name: "SingleView", logo: "/clients/singleview.png" },
   { name: "Kottouf", logo: "/clients/kottouf.png", dark: true },
