@@ -50,9 +50,9 @@ export const metadata: Metadata = {
       "خبرة في SEO للمتاجر الإلكترونية، المحتوى، السوشيال ميديا وتحليل الأداء في السوق السعودي.",
     images: [
       {
-        url: `${BASE_PATH}/portfolio/ammar-kabeel.jpg`,
-        width: 1080,
-        height: 1620,
+        url: `${BASE_PATH}/portfolio/ammar-kabeel.webp`,
+        width: 1023,
+        height: 1537,
         alt: "Ammar Kabeel",
       },
     ],

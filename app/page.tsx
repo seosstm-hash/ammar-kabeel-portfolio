@@ -533,12 +533,13 @@ export default function Home() {
           <div className="hero-shape hero-shape-blue" />
           <div className="hero-photo-frame">
             <Image
-              src={`${BASE_PATH}/portfolio/ammar-kabeel.jpg`}
+              src={`${BASE_PATH}/portfolio/ammar-kabeel.webp`}
               alt={isArabic ? "عمار قابيل، أخصائي تسويق إلكتروني" : "Ammar Kabeel, Digital Marketing Specialist"}
               fill
               sizes="(max-width: 900px) 90vw, 42vw"
               priority
               unoptimized
+              style={{ objectFit: "contain", objectPosition: "50% 100%" }}
             />
           </div>
           <span className="hero-quote">”</span>
