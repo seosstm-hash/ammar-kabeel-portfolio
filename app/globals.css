@@ -897,6 +897,122 @@ img {
   color: var(--yellow);
 }
 
+.clients-section {
+  padding: 105px max(24px, calc((100vw - var(--max)) / 2));
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 12% 50%, rgba(50, 71, 229, 0.15), transparent 30rem),
+    radial-gradient(circle at 88% 42%, rgba(255, 212, 0, 0.07), transparent 24rem),
+    #0f1013;
+}
+
+.clients-heading {
+  max-width: var(--max);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.clients-heading h2 {
+  margin: 12px 0 0;
+  color: var(--ivory);
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1.12;
+}
+
+.clients-viewport {
+  max-width: 1500px;
+  margin: 58px auto 0;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+.clients-track {
+  width: max-content;
+  display: flex;
+  direction: ltr;
+  animation: clientsMarquee 42s linear infinite;
+}
+
+.clients-viewport:hover .clients-track {
+  animation-play-state: paused;
+}
+
+.clients-row {
+  display: flex;
+  gap: 18px;
+  padding-inline-end: 18px;
+}
+
+.client-logo-card {
+  position: relative;
+  width: 220px;
+  height: 140px;
+  flex: 0 0 220px;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.16);
+  border-radius: 4px;
+  background: #f4f1e8;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 240ms cubic-bezier(0.18, 0.8, 0.22, 1),
+    border-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.client-logo-card::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--yellow));
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.client-logo-card.is-dark {
+  background: #15161a;
+}
+
+.client-logo-card img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 88px;
+  object-fit: contain;
+  filter: saturate(0.9);
+  transition:
+    transform 240ms ease,
+    filter 240ms ease;
+}
+
+.client-logo-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(255, 212, 0, 0.58);
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(50, 71, 229, 0.16);
+}
+
+.client-logo-card:hover::before {
+  opacity: 1;
+}
+
+.client-logo-card:hover img {
+  transform: scale(1.05);
+  filter: saturate(1);
+}
+
 .experience-section {
   padding-bottom: 90px;
 }
@@ -1263,6 +1379,12 @@ footer p {
   }
 }
 
+@keyframes clientsMarquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @keyframes statusPulse {
   0%,
   100% {
@@ -1537,6 +1659,40 @@ footer p {
     padding-inline: 18px;
   }
 
+  .clients-section {
+    padding: 82px 0;
+  }
+
+  .clients-heading {
+    padding-inline: 18px;
+  }
+
+  .clients-heading h2 {
+    font-size: 40px;
+  }
+
+  .clients-viewport {
+    margin-top: 42px;
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      black 4%,
+      black 96%,
+      transparent
+    );
+  }
+
+  .client-logo-card {
+    width: 180px;
+    height: 118px;
+    flex-basis: 180px;
+    padding: 20px;
+  }
+
+  .client-logo-card img {
+    max-height: 74px;
+  }
+
   .work-card {
     grid-template-columns: 1fr;
   }
@@ -1599,5 +1755,18 @@ footer p {
   [data-reveal] {
     opacity: 1;
     transform: none;
+  }
+
+  .clients-track {
+    animation: none !important;
+  }
+
+  .clients-row[aria-hidden="true"] {
+    display: none;
+  }
+
+  .clients-viewport {
+    overflow-x: auto;
+    mask-image: none;
   }
 }

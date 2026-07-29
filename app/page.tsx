@@ -16,6 +16,34 @@ type WorkItem = {
   description: Record<Language, string>;
 };
 
+type ClientItem = {
+  name: string;
+  logo: string;
+  dark?: boolean;
+};
+
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+const clients: readonly ClientItem[] = [
+  { name: "SingleView", logo: "/clients/singleview.png" },
+  { name: "Kottouf", logo: "/clients/kottouf.png", dark: true },
+  { name: "Al Deirah Store", logo: "/clients/al-deirah.png" },
+  { name: "Bab Al-Salam", logo: "/clients/bab-alsalam.png" },
+  { name: "Amaqa Al-Ottr", logo: "/clients/amaqa-al-otrr.png", dark: true },
+  { name: "Moang", logo: "/clients/moang.png" },
+  { name: "RMZ", logo: "/clients/rmz.png" },
+  { name: "Alalam Sport", logo: "/clients/alalam-sport.png" },
+  { name: "Alnassaj", logo: "/clients/alnassaj.png", dark: true },
+  { name: "Original Caps", logo: "/clients/original-caps.png", dark: true },
+  { name: "Bin Salem", logo: "/clients/bin-salem.png" },
+  { name: "Fish Shop EST", logo: "/clients/fish-shop.png", dark: true },
+  { name: "Mukhmali", logo: "/clients/mukhmali.png" },
+  { name: "CreAroma", logo: "/clients/crearoma.png" },
+  { name: "Perfume Legend", logo: "/clients/perfume-legend.jpg", dark: true },
+  { name: "Asrar", logo: "/clients/asrar.png", dark: true },
+  { name: "Cactus", logo: "/clients/cactus.png" },
+] as const;
+
 const content = {
   ar: {
     nav: [
@@ -691,6 +719,42 @@ export default function Home() {
               </div>
             </button>
           ))}
+        </div>
+      </section>
+
+      <section className="clients-section" aria-labelledby="clients-title">
+        <div className="clients-heading" data-reveal>
+          <p className="eyebrow">{isArabic ? "شركاء النجاح" : "Selected clients"}</p>
+          <h2 id="clients-title">
+            {isArabic ? "عملاء تعاونّا سويًا" : "Clients we’ve worked with"}
+          </h2>
+        </div>
+
+        <div className="clients-viewport">
+          <div className="clients-track">
+            {[0, 1].map((group) => (
+              <div
+                className="clients-row"
+                key={group}
+                aria-hidden={group === 1 ? "true" : undefined}
+              >
+                {clients.map((client) => (
+                  <div
+                    className={`client-logo-card${client.dark ? " is-dark" : ""}`}
+                    key={`${group}-${client.name}`}
+                  >
+                    <Image
+                      src={`${BASE_PATH}${client.logo}`}
+                      alt={group === 0 ? client.name : ""}
+                      width={220}
+                      height={100}
+                      unoptimized
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
