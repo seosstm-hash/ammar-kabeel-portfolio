@@ -26,7 +26,7 @@ const notoKufiArabic = Noto_Kufi_Arabic({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "عمار قابيل | أخصائي تسويق إلكتروني",
+    default: "Ammar Kabeel | Digital Marketing",
     template: "%s | Ammar Kabeel",
   },
   description:
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ar_SA",
     alternateLocale: "en_US",
-    title: "عمار قابيل | أخصائي تسويق إلكتروني",
+    title: "Ammar Kabeel | Digital Marketing",
     description:
       "خبرة في SEO للمتاجر الإلكترونية، المحتوى، السوشيال ميديا وتحليل الأداء في السوق السعودي.",
     images: [
