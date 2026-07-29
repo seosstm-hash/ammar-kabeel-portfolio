@@ -41,6 +41,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ammar Kabeel" }],
   creator: "Ammar Kabeel",
+  verification: {
+    google: "JlugPlzSuI0qrckL10sHaBY47-m-7LuyouBMzj8J0qQ",
+  },
   openGraph: {
     type: "website",
     locale: "ar_SA",
