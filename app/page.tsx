@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 type Language = "ar" | "en";
@@ -296,138 +296,7 @@ const content = {
   },
 } as const;
 
-const workItems: WorkItem[] = [
-  {
-    title: { ar: "لوحات نتائج SEO", en: "SEO performance dashboards" },
-    client: "Google Search Console",
-    category: "seo",
-    image: `${BASE_PATH}/portfolio/seo-results-search-49.jpg`,
-    description: {
-      ar: "نماذج موثقة من متابعة النقرات والظهور والحركة العضوية عبر Google Search Console.",
-      en: "Documented examples of clicks, impressions, and organic visibility tracked in Google Search Console.",
-    },
-  },
-  {
-    title: { ar: "تحسين متجر سعودي", en: "Saudi e-commerce SEO" },
-    client: "Sallat",
-    category: "seo",
-    image: `${BASE_PATH}/portfolio/seo-results-salla-52.jpg`,
-    description: {
-      ar: "مقارنة الأداء قبل وبعد العمل على الظهور العضوي وبنية المتجر.",
-      en: "A before-and-after view of organic visibility and store optimization work.",
-    },
-  },
-  {
-    title: { ar: "نماذج نمو عضوي", en: "Organic growth examples" },
-    client: "Multiple Projects",
-    category: "seo",
-    image: `${BASE_PATH}/portfolio/seo-results-more-53.jpg`,
-    description: {
-      ar: "أمثلة إضافية لقياس تطور النقرات ومرات الظهور والترتيب.",
-      en: "Additional examples tracking click, impression, and ranking progress.",
-    },
-  },
-  {
-    title: { ar: "محتوى عطور متوافق مع البحث", en: "Search-led perfume content" },
-    client: "Crearoma",
-    category: "seo",
-    image: `${BASE_PATH}/portfolio/seo-perfume-31.jpg`,
-    description: {
-      ar: "كتابة محتوى عميق، واستهداف كلمات عالية الطلب، وصياغة عناوين تساعد على النقر.",
-      en: "Deep content, high-demand keyword targeting, and click-focused title writing.",
-    },
-  },
-  {
-    title: { ar: "محتوى القهوة المختصة", en: "Specialty coffee content" },
-    client: "Ajaweed",
-    category: "seo",
-    image: `${BASE_PATH}/portfolio/seo-coffee-35.jpg`,
-    description: {
-      ar: "بناء مقالات متوافقة مع نية المستخدم وربطها بفرص الظهور في نتائج البحث.",
-      en: "Articles structured around user intent and organic search opportunities.",
-    },
-  },
-  {
-    title: { ar: "محتوى متجر أسماك الزينة", en: "Ornamental fish store content" },
-    client: "E-commerce",
-    category: "seo",
-    image: `${BASE_PATH}/portfolio/seo-fish-39.jpg`,
-    description: {
-      ar: "دمج المقالات المتخصصة مع العناصر البصرية لدعم الفهم والظهور.",
-      en: "Combining specialist articles with visual elements to support understanding and visibility.",
-    },
-  },
-  {
-    title: { ar: "مقالات القطاع الطبي", en: "Healthcare articles" },
-    client: "Vera Clinics",
-    category: "seo",
-    image: `${BASE_PATH}/portfolio/seo-medical-42.jpg`,
-    description: {
-      ar: "محتوى طبي منظم بلغة واضحة ومهيأ لمحركات البحث.",
-      en: "Structured healthcare content written clearly and optimized for search.",
-    },
-  },
-  {
-    title: { ar: "حملة برياني الذواقة", en: "Biryani Atwaqa campaign" },
-    client: "Food & Beverage",
-    category: "social",
-    image: `${BASE_PATH}/portfolio/social-biryani-05.jpg`,
-    description: {
-      ar: "محتوى تسويقي وأفكار حملات لمطعم هندي في الدمام بهدف رفع التفاعل والمبيعات.",
-      en: "Marketing content and campaign ideas for an Indian restaurant in Dammam.",
-    },
-  },
-  {
-    title: { ar: "إطلاق ناي كافيه", en: "Nay Cafe launch" },
-    client: "Nay Cafe",
-    category: "social",
-    image: `${BASE_PATH}/portfolio/social-nay-09.jpg`,
-    description: {
-      ar: "حملة إطلاق ركزت على الوعي بالتفاصيل البصرية والهوية وتجربة المكان.",
-      en: "A launch campaign built around awareness, visual detail, identity, and experience.",
-    },
-  },
-  {
-    title: { ar: "حملة مطعم كيين", en: "KIIN restaurant campaign" },
-    client: "KIIN",
-    category: "social",
-    image: `${BASE_PATH}/portfolio/social-kiin-13.jpg`,
-    description: {
-      ar: "أفكار إعلانية ومحتوى وتصوير وتعاون مع المؤثرين لدعم الوصول والمبيعات.",
-      en: "Creative ideas, content, production, and influencer collaboration supporting reach and sales.",
-    },
-  },
-  {
-    title: { ar: "حملة تالا هاوس", en: "Tala House campaign" },
-    client: "Real Estate",
-    category: "social",
-    image: `${BASE_PATH}/portfolio/social-tala-15.jpg`,
-    description: {
-      ar: "حملة عقارية موجهة لبناء الوعي وتحويل الاهتمام إلى استفسارات وفرص حقيقية.",
-      en: "A real-estate campaign designed to turn awareness into inquiries and opportunities.",
-    },
-  },
-  {
-    title: { ar: "محتوى ناوي ميديا", en: "Nawy Media content" },
-    client: "Nawy Media",
-    category: "social",
-    image: `${BASE_PATH}/portfolio/social-nawy-21.jpg`,
-    description: {
-      ar: "محتوى حملة توعوية بالتعاون مع التوجيه الفني لإبراز خدمات الوكالة.",
-      en: "Awareness content created with art direction to spotlight the agency’s services.",
-    },
-  },
-  {
-    title: { ar: "حملة توعوية صحية", en: "Healthcare awareness campaign" },
-    client: "Jamjoom Pharma",
-    category: "copy",
-    image: `${BASE_PATH}/portfolio/copy-pharma-25.jpg`,
-    description: {
-      ar: "كتابة منشورات مخصصة لكل منصة لتبسيط المعلومات الطبية وبناء تواصل إنساني.",
-      en: "Platform-specific copy that simplified health information and built an empathetic connection.",
-    },
-  },
-];
+const workItems: WorkItem[] = [];
 
 const toolNames = [
   "Google Search Console",
@@ -444,18 +313,8 @@ const toolNames = [
 
 export default function Home() {
   const [lang, setLang] = useState<Language>("ar");
-  const [filter, setFilter] = useState<WorkCategory>("all");
-  const [activeWork, setActiveWork] = useState<WorkItem | null>(null);
   const t = content[lang];
   const isArabic = lang === "ar";
-
-  const filteredWork = useMemo(
-    () =>
-      filter === "all"
-        ? workItems
-        : workItems.filter((item) => item.category === filter),
-    [filter],
-  );
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -483,19 +342,7 @@ export default function Home() {
     });
 
     return () => observer.disconnect();
-  }, [lang, filter]);
-
-  useEffect(() => {
-    document.body.style.overflow = activeWork ? "hidden" : "";
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setActiveWork(null);
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [activeWork]);
+  }, [lang]);
 
   return (
     <main className="site-shell" dir={isArabic ? "rtl" : "ltr"}>
@@ -671,57 +518,9 @@ export default function Home() {
       </section>
 
       <section className="section work-section" id="work">
-        <div className="section-heading section-heading-split" data-reveal>
-          <div>
-            <p className="eyebrow">{t.workEyebrow}</p>
-            <h2>{t.workTitle}</h2>
-          </div>
-          <p>{t.workIntro}</p>
-        </div>
-
-        <div className="work-filters" role="tablist" aria-label={t.workEyebrow}>
-          {(Object.keys(t.filters) as WorkCategory[]).map((key) => (
-            <button
-              key={key}
-              type="button"
-              role="tab"
-              aria-selected={filter === key}
-              className={filter === key ? "active" : ""}
-              onClick={() => setFilter(key)}
-            >
-              {t.filters[key]}
-            </button>
-          ))}
-        </div>
-
-        <div className="work-grid">
-          {filteredWork.map((item, index) => (
-            <button
-              type="button"
-              className="work-card"
-              key={`${item.client}-${item.image}`}
-              onClick={() => setActiveWork(item)}
-              data-reveal
-              style={{ "--delay": `${(index % 4) * 70}ms` } as React.CSSProperties}
-            >
-              <div className="work-image">
-                <Image
-                  src={item.image}
-                  alt={`${item.title[lang]} — ${item.client}`}
-                  fill
-                  sizes="(max-width: 900px) 100vw, 38vw"
-                  unoptimized
-                />
-                <span className="work-open" aria-hidden="true">↗</span>
-              </div>
-              <div className="work-card-copy">
-                <span>{item.client}</span>
-                <h3>{item.title[lang]}</h3>
-                <p>{item.description[lang]}</p>
-                <strong>{t.viewProject} <span aria-hidden="true">←</span></strong>
-              </div>
-            </button>
-          ))}
+        <div className="section-heading" data-reveal>
+          <p className="eyebrow">{t.workEyebrow}</p>
+          <h2>{t.workTitle}</h2>
         </div>
       </section>
 
@@ -844,41 +643,6 @@ export default function Home() {
         <a href="#top" className="back-to-top" aria-label={isArabic ? "العودة للأعلى" : "Back to top"}>↑</a>
       </footer>
 
-      {activeWork && (
-        <div
-          className="work-modal"
-          role="dialog"
-          aria-modal="true"
-          aria-label={activeWork.title[lang]}
-          onMouseDown={(event) => {
-            if (event.currentTarget === event.target) setActiveWork(null);
-          }}
-        >
-          <div className="work-modal-panel">
-            <button
-              type="button"
-              className="modal-close"
-              onClick={() => setActiveWork(null)}
-              aria-label={t.close}
-            >
-              ×
-            </button>
-            <Image
-              src={activeWork.image}
-              alt={`${activeWork.title[lang]} — ${activeWork.client}`}
-              width={1440}
-              height={810}
-              sizes="(max-width: 900px) 100vw, 70vw"
-              unoptimized
-            />
-            <div>
-              <span>{activeWork.client}</span>
-              <h2>{activeWork.title[lang]}</h2>
-              <p>{activeWork.description[lang]}</p>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   );
 }
