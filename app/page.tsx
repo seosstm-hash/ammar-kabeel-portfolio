@@ -319,9 +319,7 @@ export default function Home() {
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = isArabic ? "rtl" : "ltr";
-    document.title = isArabic
-      ? "عمار قابيل | أخصائي تسويق إلكتروني"
-      : "Ammar Kabeel | Digital Marketing Specialist";
+    document.title = "عمار قابيل | Ammar Kabeel";
   }, [lang, isArabic]);
 
   useEffect(() => {

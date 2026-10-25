@@ -5,7 +5,7 @@ import "./globals.css";
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  "https://ammar-kabeel-portfolio.cactuss-1551.chatgpt.site";
+  "https://seosstm-hash.github.io";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,11 +26,11 @@ const notoKufiArabic = Noto_Kufi_Arabic({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Ammar Kabeel | Digital Marketing",
+    default: "عمار قابيل | Ammar Kabeel",
     template: "%s | Ammar Kabeel",
   },
   description:
-    "البورتفوليو الرسمي لعمار قابيل، أخصائي تسويق إلكتروني في الرياض ومتخصص في SEO للمتاجر الإلكترونية، المحتوى، السوشيال ميديا وتحليل الأداء.",
+    "الموقع الرسمي لعمار قابيل، أخصائي تسويق إلكتروني في الرياض ومتخصص في SEO للمتاجر الإلكترونية، المحتوى، السوشيال ميديا وتحليل الأداء.",
   keywords: [
     "عمار قابيل",
     "Ammar Kabeel",
@@ -44,11 +44,16 @@ export const metadata: Metadata = {
   verification: {
     google: "JlugPlzSuI0qrckL10sHaBY47-m-7LuyouBMzj8J0qQ",
   },
+  alternates: {
+    canonical: `${BASE_PATH}/`,
+  },
   openGraph: {
+    siteName: "عمار قابيل | Ammar Kabeel",
+    url: `${BASE_PATH}/`,
     type: "website",
     locale: "ar_SA",
     alternateLocale: "en_US",
-    title: "Ammar Kabeel | Digital Marketing",
+    title: "عمار قابيل | Ammar Kabeel",
     description:
       "خبرة في SEO للمتاجر الإلكترونية، المحتوى، السوشيال ميديا وتحليل الأداء في السوق السعودي.",
     images: [
