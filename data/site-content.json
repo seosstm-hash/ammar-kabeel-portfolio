@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 1,
+  "seo": {
+    "title": "عمار قابيل | Ammar Kabeel",
+    "description": "الموقع الرسمي لعمار قابيل، أخصائي تسويق إلكتروني في الرياض ومتخصص في SEO للمتاجر الإلكترونية، المحتوى، السوشيال ميديا وتحليل الأداء."
+  },
+  "profile": {
+    "photo": "/portfolio/ammar-kabeel.webp",
+    "cv": "/portfolio/ammar-kabeel-cv.pdf"
+  },
+  "contact": {
+    "email": "ammarashraf332@gmail.com",
+    "saudiPhone": "966550813026",
+    "egyptPhone": "201147246390",
+    "linkedin": "https://www.linkedin.com/in/ammar-kabeel-417644273/"
+  },
+  "content": {
+    "ar": {
+      "nav": [
+        [
+          "عني",
+          "about"
+        ],
+        [
+          "خبراتي",
+          "expertise"
+        ],
+        [
+          "أعمالي",
+          "work"
+        ],
+        [
+          "خبرتي",
+          "experience"
+        ],
+        [
+          "تواصل",
+          "contact"
+        ]
+      ],
+      "availability": "متاح لفرص العمل والمشروعات في الرياض",
+      "heroKicker": "استراتيجية • محتوى • نمو",
+      "firstName": "عمار",
+      "lastName": "قابيل",
+      "role": "أخصائي تسويق إلكتروني",
+      "heroText": "أحوّل البحث والمحتوى والبيانات إلى حضور رقمي أقوى، وزيارات عضوية مستدامة، وتجارب تسويقية تقرّب العلامات التجارية من عملائها.",
+      "contact": "تواصل معي",
+      "work": "شاهد أعمالي",
+      "location": "الرياض، المملكة العربية السعودية",
+      "stats": [
+        [
+          "+3",
+          "سنوات خبرة متخصصة في SEO"
+        ],
+        [
+          "+1.1K",
+          "متابع على LinkedIn"
+        ],
+        [
+          "السوق السعودي",
+          "خبرة في متاجر ومشروعات متعددة"
+        ]
+      ],
+      "aboutEyebrow": "نبذة عني",
+      "aboutTitle": "تسويق يبدأ بالفهم وينتهي بنتيجة يمكن قياسها.",
+      "aboutText": "أخصائي تسويق إلكتروني بخبرة مركزة في تحسين محركات البحث والتجارة الإلكترونية، وخلفية ممتدة منذ 2018 في الصحافة والعلاقات العامة والسوشيال ميديا وكتابة المحتوى. أعمل على بناء رحلة متكاملة تبدأ من فهم نية المستخدم، وتمر بالمحتوى والتحليل، وتنتهي بتحسين الظهور والتحويل.",
+      "sectors": "خبرة عبر قطاعات",
+      "sectorItems": [
+        "التجارة الإلكترونية",
+        "العطور",
+        "المطاعم",
+        "العقار",
+        "القطاع الطبي",
+        "القهوة"
+      ],
+      "expertiseEyebrow": "مجالات التخصص",
+      "expertiseTitle": "مهارات متكاملة تخدم النمو الرقمي.",
+      "expertiseIntro": "لا أتعامل مع كل قناة بمعزل عن الأخرى؛ أربط الظهور بالمحتوى، والمحتوى بتجربة المستخدم، والبيانات بالقرار.",
+      "expertise": [
+        {
+          "n": "01",
+          "title": "تحسين محركات البحث",
+          "text": "استراتيجية SEO، بحث الكلمات، نية المستخدم، On-Page، Technical SEO، الربط الداخلي، الفهرسة والتقارير."
+        },
+        {
+          "n": "02",
+          "title": "SEO للمتاجر الإلكترونية",
+          "text": "تحسين التصنيفات والمنتجات والميتا والروابط، مع خبرة عملية في منصات سلة والمتاجر السعودية."
+        },
+        {
+          "n": "03",
+          "title": "المحتوى والكوبي رايتنج",
+          "text": "مقالات وصفحات هبوط ومحتوى تجاري ونسخ إعلانية تجمع بين نية البحث والإقناع والتحويل."
+        },
+        {
+          "n": "04",
+          "title": "السوشيال ميديا",
+          "text": "أفكار حملات، خطط محتوى، كتابة منشورات، توجيه إبداعي وتحويل أهداف العلامة إلى رسائل قابلة للمشاركة."
+        },
+        {
+          "n": "05",
+          "title": "التحليل وقياس الأداء",
+          "text": "Google Search Console وGA4 وSemrush وAhrefs وScreaming Frog لفهم الحركة وتحديد فرص النمو."
+        },
+        {
+          "n": "06",
+          "title": "CRO وتجربة المستخدم",
+          "text": "تحسين بنية الصفحات والرسائل والدعوات لاتخاذ الإجراء لرفع التفاعل وتحويل الزيارات إلى نتائج."
+        }
+      ],
+      "workEyebrow": "أعمال مختارة",
+      "workTitle": "أعمال حقيقية، من الاستراتيجية إلى التنفيذ.",
+      "workIntro": "نماذج من نتائج SEO والمحتوى والحملات التي عملت عليها. اضغط على أي عمل لمشاهدته بحجم أكبر.",
+      "filters": {
+        "all": "الكل",
+        "seo": "SEO والمحتوى",
+        "social": "السوشيال ميديا",
+        "copy": "كوبي رايتنج"
+      },
+      "viewProject": "عرض العمل",
+      "experienceEyebrow": "المسار المهني",
+      "experienceTitle": "خبرة تجمع البحث والمحتوى والتواصل.",
+      "experiences": [
+        {
+          "period": "2024 — 2026",
+          "role": "Senior SEO Specialist",
+          "company": "SEO Acuity",
+          "text": "قيادة وتنفيذ استراتيجيات SEO لمواقع عربية ومتاجر سعودية، من التحليل الفني وتخطيط المحتوى حتى تحسين الصفحات التجارية."
+        },
+        {
+          "period": "2023 — الآن",
+          "role": "E-commerce SEO Consultant",
+          "company": "مشروعات ومتاجر سعودية",
+          "text": "تحسين التصنيفات والمنتجات وبنية الروابط والمحتوى والفهرسة، وتحديد فرص الكلمات التجارية ذات الأولوية."
+        },
+        {
+          "period": "2022 — 2024",
+          "role": "SEO Content Writer",
+          "company": "Goal Maker",
+          "text": "كتابة محتوى عربي متوافق مع البحث للمقالات والخدمات وصفحات الهبوط والباك لينك."
+        },
+        {
+          "period": "2020 — 2022",
+          "role": "Social Media Specialist",
+          "company": "Life Makers & UP",
+          "text": "إدارة المحتوى والأفكار والحملات والمنشورات والتفاعل لمبادرات ومشروعات مصرية."
+        },
+        {
+          "period": "2018 — 2020",
+          "role": "Journalism & Public Relations",
+          "company": "مؤسسات إعلامية ومجتمعية",
+          "text": "البحث والمقابلات والكتابة التحريرية والتواصل، وهي الأسس التي تطورت لاحقًا إلى استراتيجية محتوى وتسويق."
+        }
+      ],
+      "tools": "أدوات أعمل بها",
+      "contactEyebrow": "لنعمل معًا",
+      "contactTitle": "هل تبحث عن شخص يفهم التسويق كمنظومة متكاملة؟",
+      "contactText": "متاح لفرص العمل والمشروعات في تحسين محركات البحث، التجارة الإلكترونية، المحتوى والتسويق الرقمي داخل الرياض وعن بُعد.",
+      "whatsappSaudi": "واتساب السعودية",
+      "egyptNumber": "الرقم المصري",
+      "email": "البريد الإلكتروني",
+      "linkedin": "LinkedIn",
+      "download": "تحميل السيرة الذاتية",
+      "close": "إغلاق",
+      "rights": "جميع الحقوق محفوظة"
+    },
+    "en": {
+      "nav": [
+        [
+          "About",
+          "about"
+        ],
+        [
+          "Expertise",
+          "expertise"
+        ],
+        [
+          "Work",
+          "work"
+        ],
+        [
+          "Experience",
+          "experience"
+        ],
+        [
+          "Contact",
+          "contact"
+        ]
+      ],
+      "availability": "Open to roles and projects in Riyadh",
+      "heroKicker": "Strategy • Content • Growth",
+      "firstName": "Ammar",
+      "lastName": "Kabeel",
+      "role": "Digital Marketing Specialist",
+      "heroText": "I turn search, content, and data into stronger digital visibility, sustainable organic traffic, and marketing experiences that bring brands closer to their customers.",
+      "contact": "Contact Me",
+      "work": "View My Work",
+      "location": "Riyadh, Saudi Arabia",
+      "stats": [
+        [
+          "3+",
+          "Years of focused SEO experience"
+        ],
+        [
+          "1.1K+",
+          "LinkedIn followers"
+        ],
+        [
+          "Saudi Market",
+          "Experience across stores and projects"
+        ]
+      ],
+      "aboutEyebrow": "About me",
+      "aboutTitle": "Marketing that starts with understanding and ends with a measurable result.",
+      "aboutText": "A digital marketing specialist with focused experience in SEO and e-commerce, backed by a wider background in journalism, public relations, social media, and digital content since 2018. I build connected journeys that start with search intent, move through content and analysis, and finish with stronger visibility and conversion.",
+      "sectors": "Experience across",
+      "sectorItems": [
+        "E-commerce",
+        "Perfumes",
+        "Restaurants",
+        "Real Estate",
+        "Healthcare",
+        "Coffee"
+      ],
+      "expertiseEyebrow": "Core expertise",
+      "expertiseTitle": "Connected skills built for digital growth.",
+      "expertiseIntro": "I do not treat each channel in isolation. I connect visibility to content, content to user experience, and data to better decisions.",
+      "expertise": [
+        {
+          "n": "01",
+          "title": "Search Engine Optimization",
+          "text": "SEO strategy, keyword research, search intent, on-page and technical SEO, internal linking, indexing, and reporting."
+        },
+        {
+          "n": "02",
+          "title": "E-commerce SEO",
+          "text": "Category, product, metadata, and URL optimization, with hands-on experience across Salla and Saudi e-commerce stores."
+        },
+        {
+          "n": "03",
+          "title": "Content & Copywriting",
+          "text": "Articles, landing pages, commercial content, and ad copy that combine search intent, persuasion, and conversion."
+        },
+        {
+          "n": "04",
+          "title": "Social Media",
+          "text": "Campaign ideas, content plans, posts, creative direction, and messages designed around brand and audience goals."
+        },
+        {
+          "n": "05",
+          "title": "Analytics & Measurement",
+          "text": "Google Search Console, GA4, Semrush, Ahrefs, and Screaming Frog to understand movement and prioritize growth."
+        },
+        {
+          "n": "06",
+          "title": "CRO & User Experience",
+          "text": "Improving page structure, messaging, and calls to action so traffic becomes engagement and measurable outcomes."
+        }
+      ],
+      "workEyebrow": "Selected work",
+      "workTitle": "Real work, from strategy to execution.",
+      "workIntro": "A selection of SEO results, content, and campaigns I worked on. Open any item to see it in more detail.",
+      "filters": {
+        "all": "All",
+        "seo": "SEO & Content",
+        "social": "Social Media",
+        "copy": "Copywriting"
+      },
+      "viewProject": "View project",
+      "experienceEyebrow": "Career journey",
+      "experienceTitle": "Experience across search, content, and communication.",
+      "experiences": [
+        {
+          "period": "2024 — 2026",
+          "role": "Senior SEO Specialist",
+          "company": "SEO Acuity",
+          "text": "Led SEO strategy and execution for Arabic websites and Saudi stores, from technical analysis and content planning to commercial-page optimization."
+        },
+        {
+          "period": "2023 — Present",
+          "role": "E-commerce SEO Consultant",
+          "company": "Saudi e-commerce projects",
+          "text": "Optimized categories, products, URL structures, content, and indexing while identifying priority commercial-search opportunities."
+        },
+        {
+          "period": "2022 — 2024",
+          "role": "SEO Content Writer",
+          "company": "Goal Maker",
+          "text": "Created search-friendly Arabic content for articles, services, landing pages, and backlink assets."
+        },
+        {
+          "period": "2020 — 2022",
+          "role": "Social Media Specialist",
+          "company": "Life Makers & UP",
+          "text": "Managed content, campaign ideas, posts, and engagement for Egyptian initiatives and business projects."
+        },
+        {
+          "period": "2018 — 2020",
+          "role": "Journalism & Public Relations",
+          "company": "Media & community organizations",
+          "text": "Built foundations in research, interviews, editorial writing, and communication that now shape my content strategy work."
+        }
+      ],
+      "tools": "Tools I work with",
+      "contactEyebrow": "Let’s work together",
+      "contactTitle": "Looking for someone who sees marketing as one connected system?",
+      "contactText": "Available for roles and projects in SEO, e-commerce, content, and digital marketing in Riyadh and remotely.",
+      "whatsappSaudi": "Saudi WhatsApp",
+      "egyptNumber": "Egypt number",
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "download": "Download CV",
+      "close": "Close",
+      "rights": "All rights reserved"
+    }
+  },
+  "clients": [
+    {
+      "name": "SingleView",
+      "logo": "/clients/singleview.png",
+      "dark": false
+    },
+    {
+      "name": "Kottouf",
+      "logo": "/clients/kottouf.png",
+      "dark": true
+    },
+    {
+      "name": "Al Deirah Store",
+      "logo": "/clients/al-deirah.png",
+      "dark": false
+    },
+    {
+      "name": "Bab Al-Salam",
+      "logo": "/clients/bab-alsalam.png",
+      "dark": false
+    },
+    {
+      "name": "Amaqa Al-Ottr",
+      "logo": "/clients/amaqa-al-otrr.png",
+      "dark": true
+    },
+    {
+      "name": "Moang",
+      "logo": "/clients/moang.png",
+      "dark": false
+    },
+    {
+      "name": "RMZ",
+      "logo": "/clients/rmz.png",
+      "dark": false
+    },
+    {
+      "name": "Alalam Sport",
+      "logo": "/clients/alalam-sport.png",
+      "dark": false
+    },
+    {
+      "name": "Alnassaj",
+      "logo": "/clients/alnassaj.png",
+      "dark": true
+    },
+    {
+      "name": "Original Caps",
+      "logo": "/clients/original-caps.png",
+      "dark": true
+    },
+    {
+      "name": "Bin Salem",
+      "logo": "/clients/bin-salem.png",
+      "dark": false
+    },
+    {
+      "name": "Fish Shop EST",
+      "logo": "/clients/fish-shop.png",
+      "dark": true
+    },
+    {
+      "name": "Mukhmali",
+      "logo": "/clients/mukhmali.png",
+      "dark": false
+    },
+    {
+      "name": "CreAroma",
+      "logo": "/clients/crearoma.png",
+      "dark": false
+    },
+    {
+      "name": "Perfume Legend",
+      "logo": "/clients/perfume-legend.jpg",
+      "dark": true
+    },
+    {
+      "name": "Asrar",
+      "logo": "/clients/asrar.png",
+      "dark": true
+    },
+    {
+      "name": "Cactus",
+      "logo": "/clients/cactus.png",
+      "dark": false
+    },
+    {
+      "name": "مدارس البتول والفرقان الدولية",
+      "logo": "/clients/batool-forqan.png",
+      "dark": false
+    },
+    {
+      "name": "Roxa",
+      "logo": "/clients/roxa.png",
+      "dark": true
+    },
+    {
+      "name": "مطعم مجلس عسير",
+      "logo": "/clients/majlis-aseer.png",
+      "dark": false
+    },
+    {
+      "name": "Coda",
+      "logo": "/clients/coda.png",
+      "dark": false
+    },
+    {
+      "name": "Feel",
+      "logo": "/clients/feel.png",
+      "dark": false
+    }
+  ],
+  "workItems": []
+}

@@ -40,3 +40,7 @@ next-env.d.ts
 /.sites-runtime/
 /outputs/
 /work/
+
+# Admin runtime secrets and compiler caches
+*.tsbuildinfo
+**/.dev.vars*

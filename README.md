@@ -1,3 +1,19 @@
+# Ammar Kabeel website
+
+النسخة الأساسية للموقع هي فرع `main` في هذا المستودع. النشر العام عبر GitHub Pages وGitHub Actions مع مسار `/ammar-kabeel-portfolio`.
+
+- الموقع: https://seosstm-hash.github.io/ammar-kabeel-portfolio/
+- لوحة التحكم: https://seosstm-hash.github.io/ammar-kabeel-portfolio/admin/
+- [إعداد الدخول بالإيميل والباسورد والنشر الآمن](docs/admin-setup.md)
+- المحتوى: `data/site-content.json`، يُضمّن أثناء البناء لضمان عرض المحتوى والميتا لمحركات البحث.
+- الخدمة الخلفية: `supabase/functions/portfolio-admin/`؛ تحتاج تفعيلًا خارجيًا قبل استخدام اللوحة.
+
+لا تعدّل نسخة ChatGPT Sites القديمة، ولا تحفظ كلمات مرور أو مفاتيح خاصة داخل المستودع.
+
+---
+
+الملاحظات التالية توثيق تاريخي للقالب الأصلي؛ لا تستخدم دورة نشر Sites للموقع الحالي.
+
 # vinext-starter
 
 A clean full-stack starter running on

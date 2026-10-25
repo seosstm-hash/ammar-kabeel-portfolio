@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Kufi_Arabic } from "next/font/google";
 import "./globals.css";
+import siteData from "../data/site-content.json";
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  "https://seosstm-hash.github.io";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://seosstm-hash.github.io";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,11 +26,10 @@ const notoKufiArabic = Noto_Kufi_Arabic({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "عمار قابيل | Ammar Kabeel",
+    default: siteData.seo.title,
     template: "%s | Ammar Kabeel",
   },
-  description:
-    "الموقع الرسمي لعمار قابيل، أخصائي تسويق إلكتروني في الرياض ومتخصص في SEO للمتاجر الإلكترونية، المحتوى، السوشيال ميديا وتحليل الأداء.",
+  description: siteData.seo.description,
   keywords: [
     "عمار قابيل",
     "Ammar Kabeel",
@@ -48,17 +47,16 @@ export const metadata: Metadata = {
     canonical: `${BASE_PATH}/`,
   },
   openGraph: {
-    siteName: "عمار قابيل | Ammar Kabeel",
+    siteName: siteData.seo.title,
     url: `${BASE_PATH}/`,
     type: "website",
     locale: "ar_SA",
     alternateLocale: "en_US",
-    title: "عمار قابيل | Ammar Kabeel",
-    description:
-      "خبرة في SEO للمتاجر الإلكترونية، المحتوى، السوشيال ميديا وتحليل الأداء في السوق السعودي.",
+    title: siteData.seo.title,
+    description: siteData.seo.description,
     images: [
       {
-        url: `${BASE_PATH}/portfolio/ammar-kabeel.webp`,
+        url: `${BASE_PATH}${siteData.profile.photo}`,
         width: 1023,
         height: 1537,
         alt: "Ammar Kabeel",

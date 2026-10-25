@@ -1,0 +1,5 @@
+# The handler calls Supabase Auth /user for every request and checks ADMIN_USER_ID.
+# This supports both legacy JWTs and current signing keys without trusting an unverified token.
+[functions.portfolio-admin]
+verify_jwt = false
+entrypoint = "./functions/portfolio-admin/index.mjs"

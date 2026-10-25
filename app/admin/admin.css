@@ -1,0 +1,338 @@
+.admin-shell {
+  min-height: 100vh;
+  background: #101114;
+  color: #f4f1e8;
+  font-family: Tahoma, Arial, sans-serif;
+  line-height: 1.8;
+}
+.admin-shell button,
+.admin-shell input,
+.admin-shell textarea,
+.admin-shell select {
+  font: inherit;
+}
+.admin-shell button {
+  cursor: pointer;
+  border: 1px solid #414249;
+  background: #22242a;
+  color: #f4f1e8;
+  border-radius: 8px;
+  padding: 9px 16px;
+}
+.admin-shell button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.admin-shell button:focus-visible,
+.admin-shell a:focus-visible,
+.admin-shell input:focus-visible,
+.admin-shell textarea:focus-visible,
+.admin-shell select:focus-visible {
+  outline: 3px solid #ffd400;
+  outline-offset: 3px;
+}
+.admin-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: space-between;
+  padding: 18px max(24px, 4vw);
+  border-bottom: 1px solid #33353b;
+  background: #17181c;
+}
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 28px;
+  font-weight: 900;
+  color: #ffd400;
+}
+.admin-brand span {
+  font-size: 17px;
+  color: #f4f1e8;
+}
+.admin-brand small {
+  display: block;
+  font-size: 11px;
+  color: #b2b3bb;
+  font-weight: 400;
+}
+.admin-login {
+  max-width: 540px;
+  margin: 64px auto;
+  padding: 36px;
+}
+.admin-eyebrow {
+  color: #ffd400;
+  letter-spacing: 0.05em;
+}
+.admin-login h1 {
+  font-size: 42px;
+  line-height: 1.6;
+  margin: 16px 0;
+}
+.admin-login > p {
+  color: #b2b3bb;
+}
+.admin-login form {
+  display: grid;
+  gap: 22px;
+  margin-top: 32px;
+}
+.admin-login label {
+  display: grid;
+  gap: 9px;
+}
+.admin-shell input:not([type="checkbox"]):not([type="file"]),
+.admin-shell textarea,
+.admin-shell select {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #44464f;
+  background: #191b20;
+  color: #f4f1e8;
+}
+.admin-shell textarea {
+  resize: vertical;
+  min-height: 50px;
+}
+.admin-shell button.admin-primary {
+  background: #ffd400;
+  color: #101114;
+  border-color: #ffd400;
+  font-weight: 700;
+}
+.admin-hint {
+  color: #a8a9b2;
+  font-size: 12px;
+}
+.admin-setup {
+  border: 1px solid #7b6d29;
+  border-radius: 12px;
+  padding: 24px;
+  background: #242113;
+}
+.admin-setup a {
+  color: #ffd400;
+  text-decoration: underline;
+}
+.admin-dashboard {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  max-width: 1500px;
+  margin: auto;
+}
+.admin-dashboard aside {
+  padding: 32px 22px;
+  border-inline-end: 1px solid #33353b;
+}
+.admin-dashboard aside h1 {
+  font-size: 22px;
+  margin: 0;
+}
+.admin-dashboard aside > p {
+  color: #a8a9b2;
+  font-size: 13px;
+}
+.admin-dashboard nav {
+  display: grid;
+  gap: 9px;
+  margin: 28px 0;
+}
+.admin-dashboard nav button {
+  text-align: start;
+  border-color: transparent;
+  background: transparent;
+}
+.admin-dashboard nav button.active {
+  background: #ffd400;
+  color: #101114;
+  font-weight: 700;
+}
+.admin-editor {
+  padding: 24px 36px;
+  min-width: 0;
+}
+.admin-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: #101114ee;
+  backdrop-filter: blur(12px);
+  padding: 16px 0;
+  border-bottom: 1px solid #33353b;
+}
+.admin-toolbar h2 {
+  font-size: 23px;
+  margin: 0;
+}
+.admin-toolbar span {
+  font-size: 12px;
+  color: #babcc5;
+}
+.admin-fields {
+  max-width: 940px;
+}
+.admin-group {
+  min-width: 0;
+  border: 1px solid #373941;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 24px 0;
+}
+.admin-group legend {
+  padding: 0 10px;
+  color: #ffd400;
+  font-weight: 700;
+}
+.admin-group .admin-group {
+  background: #16181d;
+}
+.admin-field {
+  margin: 0 0 22px;
+}
+.admin-field > label {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #d8d9df;
+}
+.admin-image {
+  max-width: 260px;
+  max-height: 180px;
+  object-fit: contain;
+  background: #292b33;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+.admin-upload {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px !important;
+  padding: 12px;
+  border: 1px dashed #5a5c68;
+  border-radius: 8px;
+}
+.admin-upload small {
+  color: #b3b5bf;
+}
+.admin-upload input {
+  max-width: 100%;
+  font-size: 12px;
+}
+.admin-check {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.admin-check input {
+  width: 20px;
+  height: 20px;
+}
+.admin-item-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+.admin-list-item {
+  border-bottom: 1px solid #34363d;
+  padding: 10px 0 20px;
+  margin-bottom: 16px;
+}
+.admin-shell .admin-danger {
+  color: #ffb3b3;
+  border-color: #764646;
+}
+.admin-shell .admin-add {
+  border-style: dashed;
+  width: 100%;
+  color: #ffd400;
+}
+.admin-error,
+.admin-success,
+.admin-deployment {
+  border-radius: 8px;
+  padding: 14px 18px;
+  overflow-wrap: anywhere;
+}
+.admin-error {
+  background: #401e24;
+  color: #ffd2d2;
+}
+.admin-success {
+  background: #16352b;
+  color: #b8efce;
+}
+.admin-deployment {
+  background: #212b45;
+  color: #d1ddff;
+  margin-top: 16px;
+  font-size: 13px;
+}
+.admin-deployment a {
+  text-decoration: underline;
+}
+.admin-shell [disabled] {
+  opacity: 0.6;
+}
+.admin-shell input[type="checkbox"] {
+  accent-color: #ffd400;
+}
+@media (max-width: 850px) {
+  .admin-dashboard {
+    grid-template-columns: 1fr;
+  }
+  .admin-dashboard aside {
+    padding: 20px;
+    border-inline-end: 0;
+    border-bottom: 1px solid #33353b;
+  }
+  .admin-dashboard nav {
+    display: flex;
+    overflow: auto;
+    margin: 16px 0;
+  }
+  .admin-dashboard nav button {
+    white-space: nowrap;
+  }
+  .admin-dashboard aside > .admin-hint {
+    display: none;
+  }
+  .admin-editor {
+    padding: 16px;
+  }
+  .admin-group {
+    padding: 14px;
+  }
+  .admin-login {
+    margin: 20px auto;
+    padding: 24px;
+  }
+  .admin-header {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .admin-header > a:not(.admin-brand) {
+    font-size: 13px;
+  }
+  .admin-toolbar h2 {
+    font-size: 18px;
+  }
+  .admin-toolbar button {
+    font-size: 13px;
+    padding: 10px;
+  }
+  .admin-login h1 {
+    font-size: 34px;
+  }
+}

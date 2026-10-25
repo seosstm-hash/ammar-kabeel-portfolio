@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "seo": {
+    "title": "",
+    "description": ""
+  },
+  "profile": {
+    "photo": "",
+    "cv": ""
+  },
+  "contact": {
+    "email": "",
+    "saudiPhone": "",
+    "egyptPhone": "",
+    "linkedin": ""
+  },
+  "content": {
+    "ar": {
+      "nav": [
+        [
+          "عني",
+          "about"
+        ],
+        [
+          "خبراتي",
+          "expertise"
+        ],
+        [
+          "أعمالي",
+          "work"
+        ],
+        [
+          "خبرتي",
+          "experience"
+        ],
+        [
+          "تواصل",
+          "contact"
+        ]
+      ],
+      "availability": "",
+      "heroKicker": "",
+      "firstName": "",
+      "lastName": "",
+      "role": "",
+      "heroText": "",
+      "contact": "",
+      "work": "",
+      "location": "",
+      "stats": [
+        [
+          ""
+        ]
+      ],
+      "aboutEyebrow": "",
+      "aboutTitle": "",
+      "aboutText": "",
+      "sectors": "",
+      "sectorItems": [
+        ""
+      ],
+      "expertiseEyebrow": "",
+      "expertiseTitle": "",
+      "expertiseIntro": "",
+      "expertise": [
+        {
+          "n": "",
+          "title": "",
+          "text": ""
+        }
+      ],
+      "workEyebrow": "",
+      "workTitle": "",
+      "workIntro": "",
+      "filters": {
+        "all": "",
+        "seo": "",
+        "social": "",
+        "copy": ""
+      },
+      "viewProject": "",
+      "experienceEyebrow": "",
+      "experienceTitle": "",
+      "experiences": [
+        {
+          "period": "",
+          "role": "",
+          "company": "",
+          "text": ""
+        }
+      ],
+      "tools": "",
+      "contactEyebrow": "",
+      "contactTitle": "",
+      "contactText": "",
+      "whatsappSaudi": "",
+      "egyptNumber": "",
+      "email": "",
+      "linkedin": "",
+      "download": "",
+      "close": "",
+      "rights": ""
+    },
+    "en": {
+      "nav": [
+        [
+          "About",
+          "about"
+        ],
+        [
+          "Expertise",
+          "expertise"
+        ],
+        [
+          "Work",
+          "work"
+        ],
+        [
+          "Experience",
+          "experience"
+        ],
+        [
+          "Contact",
+          "contact"
+        ]
+      ],
+      "availability": "",
+      "heroKicker": "",
+      "firstName": "",
+      "lastName": "",
+      "role": "",
+      "heroText": "",
+      "contact": "",
+      "work": "",
+      "location": "",
+      "stats": [
+        [
+          ""
+        ]
+      ],
+      "aboutEyebrow": "",
+      "aboutTitle": "",
+      "aboutText": "",
+      "sectors": "",
+      "sectorItems": [
+        ""
+      ],
+      "expertiseEyebrow": "",
+      "expertiseTitle": "",
+      "expertiseIntro": "",
+      "expertise": [
+        {
+          "n": "",
+          "title": "",
+          "text": ""
+        }
+      ],
+      "workEyebrow": "",
+      "workTitle": "",
+      "workIntro": "",
+      "filters": {
+        "all": "",
+        "seo": "",
+        "social": "",
+        "copy": ""
+      },
+      "viewProject": "",
+      "experienceEyebrow": "",
+      "experienceTitle": "",
+      "experiences": [
+        {
+          "period": "",
+          "role": "",
+          "company": "",
+          "text": ""
+        }
+      ],
+      "tools": "",
+      "contactEyebrow": "",
+      "contactTitle": "",
+      "contactText": "",
+      "whatsappSaudi": "",
+      "egyptNumber": "",
+      "email": "",
+      "linkedin": "",
+      "download": "",
+      "close": "",
+      "rights": ""
+    }
+  },
+  "clients": [
+    {
+      "name": "",
+      "logo": "",
+      "dark": false
+    }
+  ],
+  "workItems": []
+}

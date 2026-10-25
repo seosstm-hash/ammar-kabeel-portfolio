@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import siteData from "../data/site-content.json";
 
 type Language = "ar" | "en";
 type WorkCategory = "all" | "seo" | "social" | "copy";
@@ -10,293 +11,21 @@ const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 type WorkItem = {
   title: Record<Language, string>;
-  client: string;
-  category: Exclude<WorkCategory, "all">;
-  image: string;
   description: Record<Language, string>;
+  client: string;
+  category: "seo" | "social" | "copy";
+  image: string;
 };
-
-type ClientItem = {
-  name: string;
-  logo: string;
-  dark?: boolean;
-};
-
-const clients: readonly ClientItem[] = [
-  { name: "SingleView", logo: "/clients/singleview.png" },
-  { name: "Kottouf", logo: "/clients/kottouf.png", dark: true },
-  { name: "Al Deirah Store", logo: "/clients/al-deirah.png" },
-  { name: "Bab Al-Salam", logo: "/clients/bab-alsalam.png" },
-  { name: "Amaqa Al-Ottr", logo: "/clients/amaqa-al-otrr.png", dark: true },
-  { name: "Moang", logo: "/clients/moang.png" },
-  { name: "RMZ", logo: "/clients/rmz.png" },
-  { name: "Alalam Sport", logo: "/clients/alalam-sport.png" },
-  { name: "Alnassaj", logo: "/clients/alnassaj.png", dark: true },
-  { name: "Original Caps", logo: "/clients/original-caps.png", dark: true },
-  { name: "Bin Salem", logo: "/clients/bin-salem.png" },
-  { name: "Fish Shop EST", logo: "/clients/fish-shop.png", dark: true },
-  { name: "Mukhmali", logo: "/clients/mukhmali.png" },
-  { name: "CreAroma", logo: "/clients/crearoma.png" },
-  { name: "Perfume Legend", logo: "/clients/perfume-legend.jpg", dark: true },
-  { name: "Asrar", logo: "/clients/asrar.png", dark: true },
-  { name: "Cactus", logo: "/clients/cactus.png" },
-  { name: "مدارس البتول والفرقان الدولية", logo: "/clients/batool-forqan.png" },
-  { name: "Roxa", logo: "/clients/roxa.png", dark: true },
-  { name: "مطعم مجلس عسير", logo: "/clients/majlis-aseer.png" },
-  { name: "Coda", logo: "/clients/coda.png" },
-  { name: "Feel", logo: "/clients/feel.png" },
-] as const;
-
-const content = {
-  ar: {
-    nav: [
-      ["عني", "about"],
-      ["خبراتي", "expertise"],
-      ["أعمالي", "work"],
-      ["خبرتي", "experience"],
-      ["تواصل", "contact"],
-    ],
-    availability: "متاح لفرص العمل والمشروعات في الرياض",
-    heroKicker: "استراتيجية • محتوى • نمو",
-    firstName: "عمار",
-    lastName: "قابيل",
-    role: "أخصائي تسويق إلكتروني",
-    heroText:
-      "أحوّل البحث والمحتوى والبيانات إلى حضور رقمي أقوى، وزيارات عضوية مستدامة، وتجارب تسويقية تقرّب العلامات التجارية من عملائها.",
-    contact: "تواصل معي",
-    work: "شاهد أعمالي",
-    location: "الرياض، المملكة العربية السعودية",
-    stats: [
-      ["+3", "سنوات خبرة متخصصة في SEO"],
-      ["+1.1K", "متابع على LinkedIn"],
-      ["السوق السعودي", "خبرة في متاجر ومشروعات متعددة"],
-    ],
-    aboutEyebrow: "نبذة عني",
-    aboutTitle: "تسويق يبدأ بالفهم وينتهي بنتيجة يمكن قياسها.",
-    aboutText:
-      "أخصائي تسويق إلكتروني بخبرة مركزة في تحسين محركات البحث والتجارة الإلكترونية، وخلفية ممتدة منذ 2018 في الصحافة والعلاقات العامة والسوشيال ميديا وكتابة المحتوى. أعمل على بناء رحلة متكاملة تبدأ من فهم نية المستخدم، وتمر بالمحتوى والتحليل، وتنتهي بتحسين الظهور والتحويل.",
-    sectors: "خبرة عبر قطاعات",
-    sectorItems: ["التجارة الإلكترونية", "العطور", "المطاعم", "العقار", "القطاع الطبي", "القهوة"],
-    expertiseEyebrow: "مجالات التخصص",
-    expertiseTitle: "مهارات متكاملة تخدم النمو الرقمي.",
-    expertiseIntro:
-      "لا أتعامل مع كل قناة بمعزل عن الأخرى؛ أربط الظهور بالمحتوى، والمحتوى بتجربة المستخدم، والبيانات بالقرار.",
-    expertise: [
-      {
-        n: "01",
-        title: "تحسين محركات البحث",
-        text: "استراتيجية SEO، بحث الكلمات، نية المستخدم، On-Page، Technical SEO، الربط الداخلي، الفهرسة والتقارير.",
-      },
-      {
-        n: "02",
-        title: "SEO للمتاجر الإلكترونية",
-        text: "تحسين التصنيفات والمنتجات والميتا والروابط، مع خبرة عملية في منصات سلة والمتاجر السعودية.",
-      },
-      {
-        n: "03",
-        title: "المحتوى والكوبي رايتنج",
-        text: "مقالات وصفحات هبوط ومحتوى تجاري ونسخ إعلانية تجمع بين نية البحث والإقناع والتحويل.",
-      },
-      {
-        n: "04",
-        title: "السوشيال ميديا",
-        text: "أفكار حملات، خطط محتوى، كتابة منشورات، توجيه إبداعي وتحويل أهداف العلامة إلى رسائل قابلة للمشاركة.",
-      },
-      {
-        n: "05",
-        title: "التحليل وقياس الأداء",
-        text: "Google Search Console وGA4 وSemrush وAhrefs وScreaming Frog لفهم الحركة وتحديد فرص النمو.",
-      },
-      {
-        n: "06",
-        title: "CRO وتجربة المستخدم",
-        text: "تحسين بنية الصفحات والرسائل والدعوات لاتخاذ الإجراء لرفع التفاعل وتحويل الزيارات إلى نتائج.",
-      },
-    ],
-    workEyebrow: "أعمال مختارة",
-    workTitle: "أعمال حقيقية، من الاستراتيجية إلى التنفيذ.",
-    workIntro:
-      "نماذج من نتائج SEO والمحتوى والحملات التي عملت عليها. اضغط على أي عمل لمشاهدته بحجم أكبر.",
-    filters: {
-      all: "الكل",
-      seo: "SEO والمحتوى",
-      social: "السوشيال ميديا",
-      copy: "كوبي رايتنج",
-    },
-    viewProject: "عرض العمل",
-    experienceEyebrow: "المسار المهني",
-    experienceTitle: "خبرة تجمع البحث والمحتوى والتواصل.",
-    experiences: [
-      {
-        period: "2024 — 2026",
-        role: "Senior SEO Specialist",
-        company: "SEO Acuity",
-        text: "قيادة وتنفيذ استراتيجيات SEO لمواقع عربية ومتاجر سعودية، من التحليل الفني وتخطيط المحتوى حتى تحسين الصفحات التجارية.",
-      },
-      {
-        period: "2023 — الآن",
-        role: "E-commerce SEO Consultant",
-        company: "مشروعات ومتاجر سعودية",
-        text: "تحسين التصنيفات والمنتجات وبنية الروابط والمحتوى والفهرسة، وتحديد فرص الكلمات التجارية ذات الأولوية.",
-      },
-      {
-        period: "2022 — 2024",
-        role: "SEO Content Writer",
-        company: "Goal Maker",
-        text: "كتابة محتوى عربي متوافق مع البحث للمقالات والخدمات وصفحات الهبوط والباك لينك.",
-      },
-      {
-        period: "2020 — 2022",
-        role: "Social Media Specialist",
-        company: "Life Makers & UP",
-        text: "إدارة المحتوى والأفكار والحملات والمنشورات والتفاعل لمبادرات ومشروعات مصرية.",
-      },
-      {
-        period: "2018 — 2020",
-        role: "Journalism & Public Relations",
-        company: "مؤسسات إعلامية ومجتمعية",
-        text: "البحث والمقابلات والكتابة التحريرية والتواصل، وهي الأسس التي تطورت لاحقًا إلى استراتيجية محتوى وتسويق.",
-      },
-    ],
-    tools: "أدوات أعمل بها",
-    contactEyebrow: "لنعمل معًا",
-    contactTitle: "هل تبحث عن شخص يفهم التسويق كمنظومة متكاملة؟",
-    contactText:
-      "متاح لفرص العمل والمشروعات في تحسين محركات البحث، التجارة الإلكترونية، المحتوى والتسويق الرقمي داخل الرياض وعن بُعد.",
-    whatsappSaudi: "واتساب السعودية",
-    egyptNumber: "الرقم المصري",
-    email: "البريد الإلكتروني",
-    linkedin: "LinkedIn",
-    download: "تحميل السيرة الذاتية",
-    close: "إغلاق",
-    rights: "جميع الحقوق محفوظة",
-  },
-  en: {
-    nav: [
-      ["About", "about"],
-      ["Expertise", "expertise"],
-      ["Work", "work"],
-      ["Experience", "experience"],
-      ["Contact", "contact"],
-    ],
-    availability: "Open to roles and projects in Riyadh",
-    heroKicker: "Strategy • Content • Growth",
-    firstName: "Ammar",
-    lastName: "Kabeel",
-    role: "Digital Marketing Specialist",
-    heroText:
-      "I turn search, content, and data into stronger digital visibility, sustainable organic traffic, and marketing experiences that bring brands closer to their customers.",
-    contact: "Contact Me",
-    work: "View My Work",
-    location: "Riyadh, Saudi Arabia",
-    stats: [
-      ["3+", "Years of focused SEO experience"],
-      ["1.1K+", "LinkedIn followers"],
-      ["Saudi Market", "Experience across stores and projects"],
-    ],
-    aboutEyebrow: "About me",
-    aboutTitle: "Marketing that starts with understanding and ends with a measurable result.",
-    aboutText:
-      "A digital marketing specialist with focused experience in SEO and e-commerce, backed by a wider background in journalism, public relations, social media, and digital content since 2018. I build connected journeys that start with search intent, move through content and analysis, and finish with stronger visibility and conversion.",
-    sectors: "Experience across",
-    sectorItems: ["E-commerce", "Perfumes", "Restaurants", "Real Estate", "Healthcare", "Coffee"],
-    expertiseEyebrow: "Core expertise",
-    expertiseTitle: "Connected skills built for digital growth.",
-    expertiseIntro:
-      "I do not treat each channel in isolation. I connect visibility to content, content to user experience, and data to better decisions.",
-    expertise: [
-      {
-        n: "01",
-        title: "Search Engine Optimization",
-        text: "SEO strategy, keyword research, search intent, on-page and technical SEO, internal linking, indexing, and reporting.",
-      },
-      {
-        n: "02",
-        title: "E-commerce SEO",
-        text: "Category, product, metadata, and URL optimization, with hands-on experience across Salla and Saudi e-commerce stores.",
-      },
-      {
-        n: "03",
-        title: "Content & Copywriting",
-        text: "Articles, landing pages, commercial content, and ad copy that combine search intent, persuasion, and conversion.",
-      },
-      {
-        n: "04",
-        title: "Social Media",
-        text: "Campaign ideas, content plans, posts, creative direction, and messages designed around brand and audience goals.",
-      },
-      {
-        n: "05",
-        title: "Analytics & Measurement",
-        text: "Google Search Console, GA4, Semrush, Ahrefs, and Screaming Frog to understand movement and prioritize growth.",
-      },
-      {
-        n: "06",
-        title: "CRO & User Experience",
-        text: "Improving page structure, messaging, and calls to action so traffic becomes engagement and measurable outcomes.",
-      },
-    ],
-    workEyebrow: "Selected work",
-    workTitle: "Real work, from strategy to execution.",
-    workIntro:
-      "A selection of SEO results, content, and campaigns I worked on. Open any item to see it in more detail.",
-    filters: {
-      all: "All",
-      seo: "SEO & Content",
-      social: "Social Media",
-      copy: "Copywriting",
-    },
-    viewProject: "View project",
-    experienceEyebrow: "Career journey",
-    experienceTitle: "Experience across search, content, and communication.",
-    experiences: [
-      {
-        period: "2024 — 2026",
-        role: "Senior SEO Specialist",
-        company: "SEO Acuity",
-        text: "Led SEO strategy and execution for Arabic websites and Saudi stores, from technical analysis and content planning to commercial-page optimization.",
-      },
-      {
-        period: "2023 — Present",
-        role: "E-commerce SEO Consultant",
-        company: "Saudi e-commerce projects",
-        text: "Optimized categories, products, URL structures, content, and indexing while identifying priority commercial-search opportunities.",
-      },
-      {
-        period: "2022 — 2024",
-        role: "SEO Content Writer",
-        company: "Goal Maker",
-        text: "Created search-friendly Arabic content for articles, services, landing pages, and backlink assets.",
-      },
-      {
-        period: "2020 — 2022",
-        role: "Social Media Specialist",
-        company: "Life Makers & UP",
-        text: "Managed content, campaign ideas, posts, and engagement for Egyptian initiatives and business projects.",
-      },
-      {
-        period: "2018 — 2020",
-        role: "Journalism & Public Relations",
-        company: "Media & community organizations",
-        text: "Built foundations in research, interviews, editorial writing, and communication that now shape my content strategy work.",
-      },
-    ],
-    tools: "Tools I work with",
-    contactEyebrow: "Let’s work together",
-    contactTitle: "Looking for someone who sees marketing as one connected system?",
-    contactText:
-      "Available for roles and projects in SEO, e-commerce, content, and digital marketing in Riyadh and remotely.",
-    whatsappSaudi: "Saudi WhatsApp",
-    egyptNumber: "Egypt number",
-    email: "Email",
-    linkedin: "LinkedIn",
-    download: "Download CV",
-    close: "Close",
-    rights: "All rights reserved",
-  },
-} as const;
-
-const workItems: WorkItem[] = [];
+const { content, clients, contact, profile, seo } = siteData;
+const workItems: WorkItem[] = siteData.workItems;
+const whatsappLink = `https://wa.me/${contact.saudiPhone}?text=${encodeURIComponent(`مرحبا ${content.ar.firstName}، أرغب في التواصل معك`)}`;
+function displayPhone(phone: string) {
+  if (/^966\d{9}$/.test(phone))
+    return `+966 ${phone.slice(3, 5)} ${phone.slice(5, 8)} ${phone.slice(8)}`;
+  if (/^20\d{10}$/.test(phone))
+    return `+20 ${phone.slice(2, 5)} ${phone.slice(5, 8)} ${phone.slice(8)}`;
+  return `+${phone}`;
+}
 
 const toolNames = [
   "Google Search Console",
@@ -314,12 +43,16 @@ const toolNames = [
 export default function Home() {
   const [lang, setLang] = useState<Language>("ar");
   const t = content[lang];
+  const [filter, setFilter] = useState<WorkCategory>("all");
+  const visibleWork = workItems.filter(
+    (item) => filter === "all" || item.category === filter,
+  );
   const isArabic = lang === "ar";
 
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = isArabic ? "rtl" : "ltr";
-    document.title = "عمار قابيل | Ammar Kabeel";
+    document.title = seo.title;
   }, [lang, isArabic]);
 
   useEffect(() => {
@@ -335,9 +68,11 @@ export default function Home() {
       { threshold: 0.12, rootMargin: "0px 0px -50px" },
     );
 
-    document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((element) => {
-      observer.observe(element);
-    });
+    document
+      .querySelectorAll<HTMLElement>("[data-reveal]")
+      .forEach((element) => {
+        observer.observe(element);
+      });
 
     return () => observer.disconnect();
   }, [lang]);
@@ -350,13 +85,13 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            name: "Ammar Kabeel",
-            alternateName: "عمار قابيل",
-            jobTitle: "Digital Marketing Specialist",
-            url: "https://www.linkedin.com/in/ammar-kabeel-417644273/",
-            sameAs: ["https://www.linkedin.com/in/ammar-kabeel-417644273/"],
-            email: "mailto:ammarashraf332@gmail.com",
-            telephone: "+966550813026",
+            name: `${content.en.firstName} ${content.en.lastName}`,
+            alternateName: `${content.ar.firstName} ${content.ar.lastName}`,
+            jobTitle: content.en.role,
+            url: "https://seosstm-hash.github.io/ammar-kabeel-portfolio/",
+            sameAs: [contact.linkedin],
+            email: `mailto:${contact.email}`,
+            telephone: `+${contact.saudiPhone}`,
             address: {
               "@type": "PostalAddress",
               addressLocality: "Riyadh",
@@ -367,10 +102,17 @@ export default function Home() {
       />
 
       <header className="site-header">
-        <a className="brand-mark" href="#top" aria-label="Ammar Kabeel">
+        <a
+          className="brand-mark"
+          href="#top"
+          aria-label={`${content.en.firstName} ${content.en.lastName}`}
+        >
           AK
         </a>
-        <nav className="desktop-nav" aria-label={isArabic ? "التنقل الرئيسي" : "Main navigation"}>
+        <nav
+          className="desktop-nav"
+          aria-label={isArabic ? "التنقل الرئيسي" : "Main navigation"}
+        >
           {t.nav.map(([label, id]) => (
             <a key={id} href={`#${id}`}>
               {label}
@@ -409,8 +151,8 @@ export default function Home() {
           <div className="hero-shape hero-shape-blue" />
           <div className="hero-photo-frame">
             <Image
-              src={`${BASE_PATH}/portfolio/ammar-kabeel.webp`}
-              alt={isArabic ? "عمار قابيل، أخصائي تسويق إلكتروني" : "Ammar Kabeel, Digital Marketing Specialist"}
+              src={`${BASE_PATH}${profile.photo}`}
+              alt={`${t.firstName} ${t.lastName}، ${t.role}`}
               fill
               sizes="(max-width: 900px) 90vw, 42vw"
               priority
@@ -423,13 +165,13 @@ export default function Home() {
 
         <div className="hero-content">
           <p className="hero-kicker">{t.heroKicker}</p>
-          <h1 aria-label={isArabic ? "عمار قابيل" : "Ammar Kabeel"}>
+          <h1 aria-label={`${t.firstName} ${t.lastName}`}>
             <span>{t.firstName}</span>
             <strong>{t.lastName}</strong>
           </h1>
           <div className="hero-role">{t.role}</div>
           <div className="hero-role-en">
-            {isArabic ? "Digital Marketing Specialist" : "أخصائي تسويق إلكتروني"}
+            {isArabic ? content.en.role : content.ar.role}
           </div>
           <p className="hero-description">{t.heroText}</p>
           <div className="skill-line" aria-label="Skills">
@@ -448,7 +190,7 @@ export default function Home() {
           <div className="hero-ctas">
             <a
               className="button button-primary"
-              href="https://wa.me/966550813026?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%B9%D9%85%D8%A7%D8%B1%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%83"
+              href={whatsappLink}
               target="_blank"
               rel="noreferrer"
             >
@@ -463,9 +205,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="stats-strip" aria-label={isArabic ? "حقائق سريعة" : "Quick facts"}>
+      <section
+        className="stats-strip"
+        aria-label={isArabic ? "حقائق سريعة" : "Quick facts"}
+      >
         {t.stats.map(([value, label], index) => (
-          <article key={label} className="stat-card" style={{ "--delay": `${index * 90}ms` } as React.CSSProperties}>
+          <article
+            key={label}
+            className="stat-card"
+            style={{ "--delay": `${index * 90}ms` } as React.CSSProperties}
+          >
             <span>{value}</span>
             <p>{label}</p>
           </article>
@@ -478,7 +227,9 @@ export default function Home() {
           <h2>{t.aboutTitle}</h2>
         </div>
         <div className="about-grid">
-          <p className="about-copy" data-reveal>{t.aboutText}</p>
+          <p className="about-copy" data-reveal>
+            {t.aboutText}
+          </p>
           <div className="sector-panel" data-reveal>
             <span>{t.sectors}</span>
             <div>
@@ -509,7 +260,9 @@ export default function Home() {
               <span className="expertise-number">{item.n}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-              <span className="card-arrow" aria-hidden="true">↗</span>
+              <span className="card-arrow" aria-hidden="true">
+                ↗
+              </span>
             </article>
           ))}
         </div>
@@ -520,11 +273,61 @@ export default function Home() {
           <p className="eyebrow">{t.workEyebrow}</p>
           <h2>{t.workTitle}</h2>
         </div>
+        {workItems.length > 0 && (
+          <>
+            <p>{t.workIntro}</p>
+            <div
+              className="work-filters"
+              aria-label={isArabic ? "تصفية الأعمال" : "Filter work"}
+            >
+              {(Object.keys(t.filters) as WorkCategory[]).map((key) => (
+                <button
+                  key={key}
+                  type="button"
+                  className={filter === key ? "active" : ""}
+                  onClick={() => setFilter(key)}
+                  aria-pressed={filter === key}
+                >
+                  {t.filters[key]}
+                </button>
+              ))}
+            </div>
+            <div className="work-grid">
+              {visibleWork.map((item, index) => (
+                <a
+                  className="work-card"
+                  key={`${item.image}-${index}`}
+                  href={`${BASE_PATH}${item.image}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="work-image">
+                    <Image
+                      src={`${BASE_PATH}${item.image}`}
+                      alt={item.title[lang]}
+                      width={800}
+                      height={600}
+                      unoptimized
+                    />
+                  </div>
+                  <div className="work-card-copy">
+                    <span>{item.client}</span>
+                    <h3>{item.title[lang]}</h3>
+                    <p>{item.description[lang]}</p>
+                    <strong>{t.viewProject} ↗</strong>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
       </section>
 
       <section className="clients-section" aria-labelledby="clients-title">
         <div className="clients-heading" data-reveal>
-          <p className="eyebrow">{isArabic ? "شركاء النجاح" : "Selected clients"}</p>
+          <p className="eyebrow">
+            {isArabic ? "شركاء النجاح" : "Selected clients"}
+          </p>
           <h2 id="clients-title">
             {isArabic ? "عملاء تعاونّا سويًا" : "Clients we’ve worked with"}
           </h2>
@@ -592,14 +395,16 @@ export default function Home() {
       </section>
 
       <section className="contact-section" id="contact">
-        <div className="contact-accent" aria-hidden="true">AK</div>
+        <div className="contact-accent" aria-hidden="true">
+          AK
+        </div>
         <div className="contact-copy" data-reveal>
           <p className="eyebrow">{t.contactEyebrow}</p>
           <h2>{t.contactTitle}</h2>
           <p>{t.contactText}</p>
           <a
             className="button button-primary"
-            href="https://wa.me/966550813026?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%B9%D9%85%D8%A7%D8%B1%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D9%83"
+            href={whatsappLink}
             target="_blank"
             rel="noreferrer"
           >
@@ -607,27 +412,33 @@ export default function Home() {
           </a>
         </div>
         <div className="contact-links" data-reveal>
-          <a href="https://wa.me/966550813026" target="_blank" rel="noreferrer">
+          <a
+            href={`https://wa.me/${contact.saudiPhone}`}
+            target="_blank"
+            rel="noreferrer"
+          >
             <span>{t.whatsappSaudi}</span>
-            <strong dir="ltr">+966 55 081 3026</strong>
+            <strong dir="ltr">{displayPhone(contact.saudiPhone)}</strong>
             <i aria-hidden="true">↗</i>
           </a>
-          <a href="tel:+201147246390">
+          <a href={`tel:+${contact.egyptPhone}`}>
             <span>{t.egyptNumber}</span>
-            <strong dir="ltr">+20 114 724 6390</strong>
+            <strong dir="ltr">{displayPhone(contact.egyptPhone)}</strong>
             <i aria-hidden="true">↗</i>
           </a>
-          <a href="mailto:ammarashraf332@gmail.com">
+          <a href={`mailto:${contact.email}`}>
             <span>{t.email}</span>
-            <strong>ammarashraf332@gmail.com</strong>
+            <strong>{contact.email}</strong>
             <i aria-hidden="true">↗</i>
           </a>
-          <a href="https://www.linkedin.com/in/ammar-kabeel-417644273/" target="_blank" rel="noreferrer">
+          <a href={contact.linkedin} target="_blank" rel="noreferrer">
             <span>{t.linkedin}</span>
-            <strong>Ammar Kabeel</strong>
+            <strong>
+              {content.en.firstName} {content.en.lastName}
+            </strong>
             <i aria-hidden="true">↗</i>
           </a>
-          <a href={`${BASE_PATH}/portfolio/ammar-kabeel-cv.pdf`} download>
+          <a href={`${BASE_PATH}${profile.cv}`} download>
             <span>{t.download}</span>
             <strong>PDF — CV</strong>
             <i aria-hidden="true">↓</i>
@@ -636,11 +447,21 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="brand-mark" href="#top" aria-label="Back to top">AK</a>
-        <p>© {new Date().getFullYear()} Ammar Kabeel — {t.rights}</p>
-        <a href="#top" className="back-to-top" aria-label={isArabic ? "العودة للأعلى" : "Back to top"}>↑</a>
+        <a className="brand-mark" href="#top" aria-label="Back to top">
+          AK
+        </a>
+        <p>
+          © {new Date().getFullYear()} {content.en.firstName}{" "}
+          {content.en.lastName} — {t.rights}
+        </p>
+        <a
+          href="#top"
+          className="back-to-top"
+          aria-label={isArabic ? "العودة للأعلى" : "Back to top"}
+        >
+          ↑
+        </a>
       </footer>
-
     </main>
   );
 }
